@@ -1,0 +1,9 @@
+# Joe O'Regan
+# A00258304
+# 30/07/2018
+
+/build/
+/.settings/
+/bin/
+*.classpath
+*.project
