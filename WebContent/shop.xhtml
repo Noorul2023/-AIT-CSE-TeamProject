@@ -1,53 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:f="http://java.sun.com/jsf/core"
-		xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<title>First JSF Application</title>
-<h:outputStylesheet name="stylesheet.css" library="css"/>
+	<title>First JSF Application</title>
+	<h:outputStylesheet name="stylesheet.css" library="css" />
 </h:head>
 <h:body>
-<h2 class="heading">Products</h2>
+	<h2 class="heading">Products</h2>
 
-<h:form>
-<!-- 
-<select name="products" size="6">
-    <option value="iPod">iPod</option>
-    <option value="iStation">iStation</option>
-    <option value="hdc Diamond phone">hdc Diamond phone</option>
-    <option value="HD TV">HD TV</option>
-  	<option value="Wireless Speakers">Wireless Speakers</option>
-  	<option value="Blue Ray DVD Player">Blue Ray DVD Player</option>
-  </select>
- -->
- 
- <h:selectOneListbox value="productsListBox">
-   <f:selectItem itemValue="0" itemLabel = "iPod" />
-   <f:selectItem itemValue="1" itemLabel = "iStation" />
-   <f:selectItem itemValue="2" itemLabel = "hdc Diamond phone" />
-   <f:selectItem itemValue="3" itemLabel = "HD TV" />
-   <f:selectItem itemValue="4" itemLabel = "Wireless Speakers" />
-   <f:selectItem itemValue="5" itemLabel = "Blue Ray DVD Player" />
- </h:selectOneListbox>
- 
-</h:form>
+	<h:form>
+		<h:selectOneListbox id="productsListBox" value="#{shopBean.productID}"
+			onchange="this.form.submit();" title="Products you can buy online">
+			<f:selectItem itemLabel="iPod" itemValue="0" />
+			<f:selectItem itemLabel="iStation" itemValue="1" />
+			<f:selectItem itemLabel="hdc Diamond phone" itemValue="2" />
+			<f:selectItem itemLabel="HD TV" itemValue="3" />
+			<f:selectItem itemLabel="Wireless Speakers" itemValue="4" />
+			<f:selectItem itemLabel="Blue Ray DVD Player" itemValue="5" />
+		</h:selectOneListbox>
+		<br />
+	</h:form>
 
-<h2 class="heading">Manage My Cart</h2>
-<h:form>
-<h:outputLabel>Product ID:</h:outputLabel>
-<h:inputText id="productID" readonly="true"></h:inputText><br/>
-<h:outputLabel>Quantity:</h:outputLabel>
-<h:inputText id="quantity"></h:inputText>
-</h:form>
+	<h2 class="heading">Manage My Cart</h2>
+	<h:form>
+		<h:outputLabel>Product ID:</h:outputLabel>
+		<h:inputText id="productID" size="3" value="#{shopBean.productID}"
+			readonly="true" title="ID for your selected product" />
+		<br />
+		<h:outputLabel>Quantity:</h:outputLabel>
+		<h:inputText id="quantity" size="3" value="#{shopBean.quantity}"
+			title="Tell us how many you want!" />
+		<br />
+	</h:form>
 
-<h:form>
-<h:commandButton value="Add to Cart" id="add" class="ActionButton"></h:commandButton>
-<h:commandButton value="Remove" id="remove" class="ActionButton"></h:commandButton>
-<h:commandButton value="Check Out" id="checkout" class="ActionButton"></h:commandButton>
-</h:form>
+	<h:form>
+		<h:commandButton id="add" styleClass="ActionButton"
+			action="#{shopBean.addHandler}" value="Add to Cart"
+			title="Add product to your shopping cart" /> &nbsp;&nbsp;
+		<h:commandButton id="remove" styleClass="ActionButton"
+			action="#{shopBean.removeHandler}" value="Remove"
+			title="Remove product from your shopping cart" /> &nbsp;&nbsp;
+		<h:commandButton value="Check Out" id="checkout" class="ActionButton" />
+	</h:form>
 
-<h2 class="heading">Contents of cart</h2>
-<p>Cart contents will be displayed here</p>
+	<h2 class="heading">Contents of cart</h2>
+
+	<h:dataTable value="#{cartBean.items}" var="row">
+		<h:column>
+			<h:outputText value="ID: #{row.productID}" />
+		</h:column>
+		<h:column>
+			<h:outputText value="Qty: #{row.quantity}" />
+		</h:column>
+	</h:dataTable>
+
 </h:body>
 </html>
