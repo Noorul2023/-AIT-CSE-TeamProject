@@ -35,6 +35,19 @@
 			</h:column>
 		</h:dataTable>
 		<h:commandButton value="Save Changes" action="#{tableData.saveAction}"/>
+		
+		<h3>Add Name</h3>
+		<table>
+		<tr>
+			<td>First Name :</td>
+			<td><h:inputText size="10" value="#{tableData.firstName}" /></td>
+		</tr>
+		<tr>
+			<td>Last Name :</td>
+			<td><h:inputText size="10" value="#{tableData.lastName}" /></td>
+		</tr>
+		<tr><td></td><td><h:commandButton value="Add Name" action="#{tableData.addName}"/></td></tr>
+		</table>
 	</h:form>
 </h:body>
 </html>

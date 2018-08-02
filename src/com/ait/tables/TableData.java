@@ -10,6 +10,8 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class TableData {
 	private ArrayList<Name> names;
+	private String firstName;
+	private String lastName;
 	
 	@PostConstruct
 	public void init() {
@@ -40,6 +42,31 @@ public class TableData {
 	
 	public String deleteName(Name name) {
 		names.remove(name);
+		return null;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String addName() {
+		final Name name = new Name(this.firstName,this.lastName);
+		
+		names.add(name);
+		firstName=null;
+		lastName=null;
 		return null;
 	}
 }
