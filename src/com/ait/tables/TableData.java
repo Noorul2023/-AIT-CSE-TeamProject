@@ -25,4 +25,16 @@ public class TableData {
 	public ArrayList<Name> getNames() {
 		return names;
 	}
+	
+	public String editName(Name name) {
+		name.setCanEdit(true);
+		return null;
+	}
+	
+	public String saveAction() {
+		for (Name name: names) {
+			name.setCanEdit(false);
+		}
+		return null;
+	}
 }

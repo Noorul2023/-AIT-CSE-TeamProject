@@ -3,6 +3,15 @@ package com.ait.tables;
 public class Name {
 	private String first;
 	private String last;
+	boolean canEdit;
+	
+	public Boolean getCanEdit() {
+		return canEdit;
+	}
+	
+	public void setCanEdit(Boolean canEdit) {
+		this.canEdit = canEdit;
+	}
 	
 	public Name(String first, String last) {
 		this.first = first;
