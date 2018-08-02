@@ -37,4 +37,9 @@ public class TableData {
 		}
 		return null;
 	}
+	
+	public String deleteName(Name name) {
+		names.remove(name);
+		return null;
+	}
 }
