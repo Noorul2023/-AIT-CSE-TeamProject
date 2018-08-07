@@ -32,6 +32,8 @@ public class ShopBean {
 	// OK - Handle "Add to Cart" button click event
 	public String addHandler() {
 		CartBean cart = Helper.getBean("cartBean",CartBean.class);
+		//System.out.println("ShopBean Line 36:");
+		//System.out.println("id " + productID + " quantity " + quantity);
 		cart.addItemToCart(productID, quantity);
 		return null;
 	}

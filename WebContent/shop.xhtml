@@ -4,10 +4,12 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
 <h:head>
 	<title>First JSF Application</title>
 	<h:outputStylesheet name="stylesheet.css" library="css" />
 </h:head>
+
 <h:body>
 	<h2 class="heading">Products</h2>
 
@@ -25,33 +27,40 @@
 	</h:form>
 
 	<h2 class="heading">Manage My Cart</h2>
+
 	<h:form>
 		<h:outputLabel>Product ID:</h:outputLabel>
+		
 		<h:inputText id="productID" size="3" value="#{shopBean.productID}"
 			readonly="true" title="ID for your selected product" />
 		<br />
+		
 		<h:outputLabel>Quantity:</h:outputLabel>
+		
 		<h:inputText id="quantity" size="3" value="#{shopBean.quantity}"
-			title="Tell us how many you want!" />
+			title="Tell us how many you want!" onchange="this.form.submit();" />
 		<br />
 	</h:form>
 
 	<h:form>
-		<h:commandButton id="add" styleClass="ActionButton"
+		<h:commandButton id="add" class="ActionButton"
 			action="#{shopBean.addHandler}" value="Add to Cart"
 			title="Add product to your shopping cart" /> &nbsp;&nbsp;
+		
 		<h:commandButton id="remove" styleClass="ActionButton"
 			action="#{shopBean.removeHandler}" value="Remove"
 			title="Remove product from your shopping cart" /> &nbsp;&nbsp;
+		
 		<h:commandButton value="Check Out" id="checkout" class="ActionButton" />
 	</h:form>
-
+	
 	<h2 class="heading">Contents of cart</h2>
 
 	<h:dataTable value="#{cartBean.items}" var="row">
 		<h:column>
 			<h:outputText value="ID: #{row.productID}" />
 		</h:column>
+		
 		<h:column>
 			<h:outputText value="Qty: #{row.quantity}" />
 		</h:column>
