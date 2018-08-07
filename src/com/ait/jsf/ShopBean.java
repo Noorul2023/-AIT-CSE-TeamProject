@@ -4,7 +4,7 @@
  */
 package com.ait.jsf;
 
-//import java.io.Serializable;
+import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 //import javax.faces.bean.RequestScoped;
@@ -13,9 +13,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "shopBean")
 @SessionScoped
 //@RequestScoped
-//public class ShopBean implements Serializable {
-public class ShopBean {
-	//private static final long serialVersionUID = 1L;
+public class ShopBean implements Serializable {
+//public class ShopBean {
+	private static final long serialVersionUID = 1L;
 		
 	private int productID; // WORKED BY CHANGING TO STATIC
 	private int quantity;

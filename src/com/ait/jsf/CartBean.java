@@ -8,10 +8,9 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "cartBean")
 @SessionScoped
-public class CartBean
-//implements Serializable 
+public class CartBean implements Serializable
 {
-	//private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Item> items;
 	private String name;
 	private String address;
