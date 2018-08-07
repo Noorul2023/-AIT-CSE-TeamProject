@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">   
+<h:head>
+	<title>Home page</title>
+	<h:outputStylesheet name="stylesheet.css" library="css"/>
+</h:head>
+
+<h:body>
+	<f:view>
+	
+	    <h:form>
+	        <h1><h:outputText value="Welcome to my online shop!"/></h1>
+	        <!-- h:graphicImage value="images/Hello.jpg" /-->
+		<h:outputLabel>Name:</h:outputLabel>
+		<h:inputText id="name" value="#{cartBean.name}"
+			title="Enter Your Name" />
+		<br />
+		<h:outputLabel>Address:</h:outputLabel>
+		<h:inputText id="address" value="#{cartBean.address}"
+			title="Address: " />
+		<br />
+	        <h:commandButton value="Start shopping!" action="shop.jsf" styleClass="ActionButton"/>	        
+	    </h:form>
+	</f:view>
+	
+	<div>     
+	    <h:form>	    
+			<!-- h:commandLink action="AdditionalInfo">Additional Info</h:commandLink -->  
+			<h:commandLink action="#{additionalInfoBean.back}">Additional Info</h:commandLink>    
+	    </h:form>	    
+	</div>
+</h:body>
+</html>

@@ -1,25 +1,36 @@
+/*
+ * Joe O'Regan
+ * A00258304
+ */
 package com.ait.jsf;
 
 //import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 //import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
-@ManagedBean
+@ManagedBean(name = "shopBean")
+@SessionScoped
 //@RequestScoped
 //public class ShopBean implements Serializable {
 public class ShopBean {
 	//private static final long serialVersionUID = 1L;
 		
-	private static int productID; // WORKED BY CHANGING TO STATIC
+	private int productID; // WORKED BY CHANGING TO STATIC
 	private int quantity;
-		
+
+	public ShopBean() {
+		this.productID = 0;
+		//this.quantity = 0;
+	}
+	
 	public int getProductID() {
 		return productID;
 	}
 	public void setProductID(int productID) {
-		ShopBean.productID = productID;
-		//this.productID = productID;
+		//ShopBean.productID = productID;
+		this.productID = productID;
 	}
 	public int getQuantity() {
 		return quantity;

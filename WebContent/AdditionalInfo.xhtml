@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">   
+<h:head>
+	<title>Additional Info page</title>
+	<h:outputStylesheet name="stylesheet.css" library="css"/>
+</h:head>
+
+<h:body>
+	<f:view>
+	
+	<h2 class="heading">Additional Information</h2>
+	    <h:form>
+			<h:outputText value="Blah" /><br/>
+			<h:outputText value="Blah" /><br/>
+			<h:outputText value="Orders will be dispatched in the next 48 hours, or 24 hours for bulk orders" />
+			<br/><br/>
+	        <h:commandButton value="Home" action="Home" styleClass="ActionButton"/>	        
+	    </h:form>	    
+	    
+	</f:view>
+	
+	<a href="${additionalInfoBean.originalPage}">
+		Back to ${additionalInfoBean.originalPage}
+	</a>
+</h:body>
+</html>
