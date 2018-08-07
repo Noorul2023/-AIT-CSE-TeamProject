@@ -1,3 +1,8 @@
+<!-- 
+Joe O'Regan
+A00258304
+Team Project JSF Lab
+ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -12,15 +17,14 @@
 	<f:view>	
 	    <h:form>
 	        <h1><h:outputText value="Welcome to my online shop!"/></h1>
+	        
 	        <!-- h:graphicImage value="images/Hello.jpg" /-->
-		<h:outputLabel>Name:</h:outputLabel>
-		<h:inputText id="name" value="#{cartBean.name}"
-			title="Enter Your Name" />
-		<br />
-		<h:outputLabel>Address:</h:outputLabel>
-		<h:inputText id="address" value="#{cartBean.address}"
-			title="Address: " />
-		<br />
+			<h:outputLabel>Name:</h:outputLabel>
+			<h:inputText id="name" value="#{cartBean.name}" title="Enter Your Name" />
+			<br />
+			<h:outputLabel>Address:</h:outputLabel>
+			<h:inputText id="address" value="#{cartBean.address}" title="Address: " />
+			<br />
 	        <h:commandButton value="Start shopping!" action="shop" styleClass="ActionButton"/>	        
 	    </h:form>
 	</f:view>

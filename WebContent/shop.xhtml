@@ -1,3 +1,8 @@
+<!-- 
+Joe O'Regan
+A00258304
+Team Project JSF Lab
+ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -11,9 +16,9 @@
 </h:head>
 
 <h:body>
-	<h2 class="heading">Products</h2>
-
 	<h:form>
+		<h2 class="heading">Products</h2>
+		
 		<h:selectOneListbox id="productsListBox" value="#{shopBean.productID}"
 			onchange="this.form.submit();" title="Products you can buy online">
 			<f:selectItem itemValue="0" itemLabel="iPod" />
@@ -25,7 +30,6 @@
 		</h:selectOneListbox>
 		<br />
 	</h:form>
-
 
 	<f:view>
 		<h:form>
@@ -59,8 +63,7 @@
 	<h:dataTable value="#{cartBean.items}" var="row">
 		<h:column>
 			<h:outputText value="ID: #{row.productID}" />
-		</h:column>
-		
+		</h:column>		
 		<h:column>
 			<h:outputText value="Qty: #{row.quantity}" />
 		</h:column>

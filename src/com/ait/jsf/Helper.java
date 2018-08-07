@@ -17,6 +17,6 @@ public class Helper {
         return application.evaluateExpressionGet(
         		context, 
         		"#{" + beanName + "}", 
-        		type);
-    }
+				type);
+	}
 }

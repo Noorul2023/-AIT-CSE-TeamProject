@@ -1,3 +1,7 @@
+/*
+ * Joe O'Regan
+ * A00258304
+ */
 package com.ait.jsf;
 
 import java.io.Serializable;
@@ -8,8 +12,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "cartBean")
 @SessionScoped
-public class CartBean implements Serializable
-{
+public class CartBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Item> items;
 	private String name;

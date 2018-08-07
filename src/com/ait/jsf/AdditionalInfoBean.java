@@ -1,3 +1,7 @@
+/*
+ * Joe O'Regan
+ * A00258304
+ */
 package com.ait.jsf;
 
 import java.io.Serializable;
@@ -24,7 +28,7 @@ public class AdditionalInfoBean implements Serializable {
 		HttpServletRequest req = (HttpServletRequest) extCtx.getRequest();
 
 		originalPage = req.getRequestURI();
-		
+
 		return "AdditionalInfo";
 	}
 
