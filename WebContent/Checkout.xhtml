@@ -1,0 +1,38 @@
+<!-- 
+Joe O'Regan
+A00258304
+Team Project JSF Lab
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">   
+<h:head>
+	<title>Checkout page</title>
+	<h:outputStylesheet name="stylesheet.css" library="css"/>
+</h:head>
+
+<h:body>
+	<f:view>	
+		<h2 class="heading">Order confirmation</h2>
+		
+	    <h:form>
+			<h:outputText value="Customer: #{cartBean.name}" /><br/>
+			<h:outputText value="Dispatch address: #{cartBean.address}" />
+			<br /><br/>
+			<h:outputText value="Your #{cartBean.itemCount} item(s) will be dispatched in the next 48 hours" />
+			<br/><br/>
+	        <!-- h:commandButton value="Home" action="Home" styleClass="ActionButton"/ -->  
+	        <a href="Home.jsf">Home</a><br/><br/>      
+	    </h:form>
+	</f:view>
+	
+	<div>     
+	    <h:form>	    
+			<!-- h:commandLink action="AdditionalInfo">Additional Info</h:commandLink -->  
+			<h:commandLink action="#{additionalInfoBean.back}">Additional Info</h:commandLink>       
+	    </h:form>	    
+	</div>
+</h:body>
+</html>

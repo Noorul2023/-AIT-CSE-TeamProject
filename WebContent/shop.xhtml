@@ -1,0 +1,80 @@
+<!-- 
+Joe O'Regan
+A00258304
+Team Project JSF Lab
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+<h:head>
+	<title>Shopping page</title>
+	<h:outputStylesheet name="stylesheet.css" library="css" />
+</h:head>
+
+<h:body>
+	<h:form>
+		<h2 class="heading">Products</h2>
+		
+		<h:selectOneListbox id="productsListBox" value="#{shopBean.productID}"
+			onchange="this.form.submit();" title="Products you can buy online">
+			<f:selectItem itemValue="0" itemLabel="iPod" />
+			<f:selectItem itemValue="1" itemLabel="iStation" />
+			<f:selectItem itemValue="2" itemLabel="hdc Diamond phone" />
+			<f:selectItem itemValue="3" itemLabel="HD TV" />
+			<f:selectItem itemValue="4" itemLabel="Wireless Speakers" />
+			<f:selectItem itemValue="5" itemLabel="Blue Ray DVD Player" />
+		</h:selectOneListbox>
+		<br />
+	</h:form>
+
+	<f:view>
+		<h:form>
+			<h2 class="heading">Manage My Cart</h2>
+			
+			<h:outputLabel>Product ID:</h:outputLabel>		
+			<h:inputText id="productID" size="3" value="#{shopBean.productID}"
+				readonly="true" title="ID for your selected product" />
+			<br />		
+			<h:outputLabel>Quantity:</h:outputLabel>		
+			<h:inputText id="quantity" size="3" value="#{shopBean.quantity}"
+				title="Tell us how many you want!" onchange="this.form.submit();" />
+			<br />
+		</h:form>
+	</f:view>
+
+	<h:form>
+		<h:commandButton id="add" class="ActionButton"
+			action="#{shopBean.addHandler}" value="Add to Cart"
+			title="Add product to your shopping cart" /> &nbsp;&nbsp;		
+		<h:commandButton id="remove" styleClass="ActionButton"
+			action="#{shopBean.removeHandler}" value="Remove"
+			title="Remove product from your shopping cart" /> &nbsp;&nbsp;
+		
+		<h:commandButton value="Check Out" id="checkout" action="#{checkoutBean.myCheckoutHandler}"
+			styleClass="ActionButton" />
+	</h:form>
+	
+	<h2 class="heading">Contents of cart</h2>
+
+	<h:dataTable value="#{cartBean.items}" var="row">
+		<h:column>
+			<h:outputText value="ID: #{row.productID}" />
+		</h:column>		
+		<h:column>
+			<h:outputText value="Qty: #{row.quantity}" />
+		</h:column>
+	</h:dataTable>
+
+	<div>     
+	    <h:form>	    
+			<!-- h:commandLink action="AdditionalInfo">Additional Info</h:commandLink -->  
+			<h:commandLink action="#{additionalInfoBean.back}">Additional Info</h:commandLink>     
+	    </h:form>	    
+	</div>
+	
+</h:body>
+</html>
