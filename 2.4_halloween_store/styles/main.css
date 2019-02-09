@@ -1,0 +1,55 @@
+/*
+	Joe O'Regan
+	A00258304
+	
+	19/07/2018
+	
+	Team Project Exercise 2.4
+*/
+
+body{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 87.5%;
+}
+
+#header img {
+	float: left;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+#header h1 {
+	text-indent: 25px;
+	color: orange;
+    font-style: italic;
+    text-shadow: 2px 2px 2px black;
+	font-size: 250%;	
+}
+
+#header h2 {
+	text-indent: 25px;
+	font-size: 125%;
+}
+
+#main h1::first-letter {
+    font-size: 250%;
+}
+
+a {
+	font-weight: bold;
+	color: orange;
+}
+
+a:hover, a:focus {
+	color:green;
+}
+
+ul {
+	line-height: 1.5;
+}
+#footer {
+	font-size: 90%;	
+	text-align: center;
+}

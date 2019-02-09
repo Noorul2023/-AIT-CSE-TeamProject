@@ -1,0 +1,98 @@
+/*
+	Joe O'Regan
+	A00258304
+	19/07/2018
+*/
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 87.5%;
+	background-color: gray;
+}
+
+h1 {
+	color: blue;
+	font-size: 200%;
+	margin: 0;
+}
+
+h2 {
+	color: blue;
+	font-size: 150%;
+	margin-bottom: 0;
+}
+
+ul {
+	line-height: 1.4;
+	margin-top: 0.25em;
+}
+
+.copyright {
+	color: gray;
+	font-size: 90%;
+	text-align: right;
+	margin: 0;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+body {
+	margin: 0;
+}
+
+#page {
+	/*width: 500px;*/
+	width: 640px;
+	margin: 0 auto 0 auto;
+	background-color: white;
+	padding: 15px;
+}
+
+#header {
+	/*border-bottom: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: gray;*/
+	border-bottom: 2px solid gray;
+	margin-bottom: 1.4em;
+	height: 90px;
+}
+
+#header h1 {
+	margin-left: 3em;	
+}
+
+#header h2 {
+	margin-left: 6em;
+	margin-bottom: 0;
+	margin-top: 0;
+	margin-right: 0;
+	color: #00CED1;
+}
+
+#footer {
+	margin-top: 0.5em;
+	/*
+	border-top: 2px;
+	border-top-style: solid;
+	border-top-color: gray;
+	*/
+	border-top: 2px solid gray;
+	padding-top: 0.7em;
+}
+
+#header img {
+	float: left;
+}
+#categories{
+	width: 150px;
+	float: left;
+}
+#categories p {
+    line-height: 1.4;
+    margin: 0 .5em 1em 0.5em;
+}
+#main {
+	margin-left: 165px;
+}
